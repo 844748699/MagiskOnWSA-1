@@ -244,8 +244,9 @@ jobs:
           if not magisk_apk:
               magisk_apk = "stable"
           if magisk_apk == "stable" or magisk_apk == "beta" or magisk_apk == "canary" or magisk_apk == "debug":
-              magisk_apk = json.loads(requests.get(f"https://github.com/topjohnwu/magisk-files/blob/master/{magisk_apk}.json").content)['magisk']['link']
-              
+              # magisk_apk = json.loads(requests.get(f"https://github.com/topjohnwu/magisk-files/blob/master/{magisk_apk}.json").content)['magisk']['link']
+               magisk_apk = "https://github.com/topjohnwu/Magisk/releases/download/v28.1/Magisk-v28.1.apk"
+          
           out_file = "magisk.zip"
 
           arch = "${{ matrix.arch }}"
